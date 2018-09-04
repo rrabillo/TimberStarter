@@ -1,0 +1,251 @@
+.intro-slider#home-intro-slider{
+  .intro-slider-text-container{
+    .intro-slider-text-wrapper{
+      width:361px;
+    }
+  }
+}
+#home-concept{
+  padding:133px 0;
+  .row{
+    justify-content: space-around;
+  }
+}
+#home-projects{
+  overflow: hidden;
+  .slider-project-container{
+    position: relative;
+  }
+  .project-content{
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 2;
+    .project-title{
+      font-size: 40px;
+      font-weight: 400;
+      color:$white;
+    }
+    .project-intro{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 2em;
+      color:$white;
+      margin-top: 16px;
+    }
+    .project-details{
+      display: flex;
+      margin-top: 44px;
+      flex-wrap: wrap;
+      padding-bottom: 48px;
+      .project-detail{
+        border-right:1px solid $white;
+        padding-left: 60px;
+        padding-right: 70px;
+        .project-detail-title{
+          font-size: 16px;
+          font-weight: 300;
+          text-transform: uppercase;
+          color:$white;
+        }
+        .project-detail-content{
+          font-size: 24px;
+          font-weight: 400;
+          margin-top: 5px;
+          color:$white;
+        }
+        &:first-child{
+          padding-left: 0;
+        }
+        &:last-child{
+          border-right:0px;
+          padding-right: 0;
+        }
+      }
+    }
+    .project-content-single{
+      display: none;
+      &.current-content{
+        display: block;
+      }
+    }
+  }
+  .swiper-slide{
+    img{
+      width: 100%;
+      height: auto;
+    }
+    .slide-project{
+      position: relative;
+      .overlay-black{
+        z-index: 1;
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom: 0;
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 160%);
+      }
+    }
+  }
+  .col-controls{
+    align-self: flex-end;
+  }
+  .slider-project-controller{
+    margin-left: -15px;
+    margin-right: -15px;
+    .project-slider-arrows{
+      width: 165px;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      justify-content: space-between;
+      padding: 23px 33px;
+      font-size: 12px;
+      .arrow-left, .arrow-right {
+        &:focus {
+          outline: 0;
+        }
+        cursor: pointer;
+      }
+    }
+    .project-slider-bottom{
+      background-color: $white;
+      height: 206px;
+      padding: 48px;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      > div{
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+#home-salons{
+  padding:115px 0 ;
+  overflow: hidden;
+  .container-dates{
+    margin-top: 100px;
+    padding-left:15px;
+    .row-dates{
+      .slider-salons{
+        overflow: hidden;
+        .swiper-wrapper{
+          align-items: center;
+        }
+        .swiper-slide{
+          width: auto;
+          text-align: center;
+          .salon-logo{
+            position: relative;
+            display: inline-block;
+            img{
+              height: auto;
+              &.img-colored{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right:0;
+                bottom:0;
+                opacity: 0;
+                transition: all 450ms ease-out;
+              }
+            }
+          }
+          .salon-content{
+            opacity: 0;
+            transition: all 550ms ease-out;
+          }
+          .salon-place{
+            font-size: 16px;
+            letter-spacing: 0.67px;
+            color:$gray-third;
+            margin-top: 10px;
+          }
+          .salon-dates{
+            color:$gray-light;
+            font-size: 18px;
+            font-weight: 300;
+            text-transform: uppercase;
+          }
+          &:hover{
+            .salon-logo{
+              img{
+                &.img-colored{
+                  opacity: 1;
+                }
+              }
+            }
+            .salon-content{
+              opacity: 1;
+            }
+          }
+        }
+      }
+      margin-top: 30px;
+      &:first-child{
+        margin-top: 0;
+      }
+
+      &:nth-child(2){
+        .col-month{
+          opacity: 0.6;
+        }
+      }
+      &:nth-child(3){
+        .col-month{
+          opacity: 0.4;
+        }
+      }
+      &:nth-child(4){
+        .col-month{
+          opacity: 0.2;
+        }
+      }
+      .col-month{
+        font-size: 40px;
+        font-weight: 500;
+        color:$gray-light;
+        opacity: 0.8;
+        text-transform: uppercase;
+        transition: all 500ms ease-out;
+        cursor: pointer;
+        &:hover{
+          opacity: 1;
+          color:$dark
+        }
+      }
+      .col-slider{
+        opacity: 0;
+        transition: all 450ms ease-out;
+      }
+      &.active{
+        .col-month{
+          color:$dark;
+          opacity: 1;
+        }
+        .col-slider{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#home-news{
+  padding:120px 0;
+  .anim-bar{
+    .bar{
+      width: 200px;
+    }
+  }
+  .home-news-bottom{
+    margin-top: 88px;
+  }
+  .home-news-btn{
+    margin-top: 54px;
+  }
+}

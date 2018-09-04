@@ -1,0 +1,14 @@
+{% if menu %}
+    {% for item in menu %}
+		<div class="item">
+			<a href="{{ item.get_link }}" data-id="{{ item.id }}">{{ item.title }}</a>
+			<ul class="d-block d-lg-none">
+                {% for link in item.get_children %}
+					<li class="sub-child">
+						<a href="{{ link.get_link }}">{{ link.title }}</a>
+					</li>
+                {% endfor %}
+			</ul>
+		</div>
+    {% endfor %}
+{% endif %}

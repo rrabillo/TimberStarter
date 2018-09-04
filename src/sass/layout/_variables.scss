@@ -1,0 +1,40 @@
+/*
+|
+| Commonly used mixins
+|-----------------------
+|
+*/
+@mixin generate-class-from-map($map, $class-prefix, $css-property, $important: ''){
+  @each $class-value, $css-value in $map {
+    .#{$class-prefix}-#{$class-value}{
+      #{$css-property}: $css-value #{$important};
+    }
+  }
+}
+/*
+ * Fonts
+ */
+
+/*
+ * Colors
+ */
+$white:#ffffff;
+/*
+|-------------
+| Colors map
+|-------------
+| - How to use: add lines to create more "color classes"
+| - Generated classes: .bg-{color} & .color-{color}
+|
+*/
+$colors : (
+        'white':$white,
+);
+
+
+/*
+ * Generators
+ */
+@include generate-class-from-map($colors, 'color', color);
+@include generate-class-from-map($colors, 'bg', background-color, '!important');
+

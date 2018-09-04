@@ -1,0 +1,36 @@
+{% if menu %}
+	<ul class="{{ css_class }}" role="nav">
+	{% for item in menu %}
+
+		{% if item.get_children is not empty %}
+			{% set submenu = true %}
+		{% else %}
+			{% set submenu = false %}
+		{% endif %}
+
+		<li class="{{item.classes | join(' ')}}{% if submenu %} {% endif %} ">
+
+			<a
+				href="{{item.get_link}}"
+				{% if submenu %}
+				{% endif %}
+			>
+				<span>
+				{{item.title}}
+				</span>
+				{% if submenu %}
+					<span class="picto-sub">
+						{% for i in 1..4 %}
+							<span class="carre"></span>
+						{% endfor %}
+					</span>
+				{% endif %}
+			</a>
+
+			{% if submenu %}
+				{% include "./parts/dropdown-menu.twig" with {'menu': item.get_children, 'parent_title': item.title} %}
+			{% endif %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}
