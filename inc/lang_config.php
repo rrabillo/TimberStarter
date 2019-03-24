@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'key' 		=> __('French', 'adveris'),
+    'key' 		=> __('French', 'starter'),
 );
 
 ?>
